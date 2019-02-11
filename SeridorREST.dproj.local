@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/12/17 20:34:29.000.926,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\FormUnit1.pas</Transaction>
+    <Transaction>2018/12/17 20:34:35.000.213,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2018/12/17 20:34:36.000.810,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\WebModuleUnit1.pas</Transaction>
+    <Transaction>2018/12/17 20:34:40.000.999,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\js\base64.js</Transaction>
+    <Transaction>2018/12/17 20:34:41.000.077,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\js\callbackframework.js</Transaction>
+    <Transaction>2018/12/17 20:34:41.000.108,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\js\base64-min.js</Transaction>
+    <Transaction>2018/12/17 20:34:41.000.686,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\images\collapse.png</Transaction>
+    <Transaction>2018/12/17 20:34:41.000.092,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\js\serverfunctions.js</Transaction>
+    <Transaction>2018/12/17 20:34:41.000.139,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\js\json2-min.js</Transaction>
+    <Transaction>2018/12/17 20:34:41.000.342,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\css\serverfunctioninvoker.css</Transaction>
+    <Transaction>2018/12/17 20:34:41.000.202,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\js\serverfunctionexecutor-min.js</Transaction>
+    <Transaction>2018/12/17 20:34:41.000.327,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\css\main.css</Transaction>
+    <Transaction>2018/12/17 20:34:41.000.405,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\templates\serverfunctioninvoker.html</Transaction>
+    <Transaction>2018/12/17 20:34:41.000.233,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\js\connection.js</Transaction>
+    <Transaction>2018/12/17 20:34:41.000.280,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\js\serverfunctioninvoker.js</Transaction>
+    <Transaction>2018/12/17 20:34:41.000.046,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\js\json2.js</Transaction>
+    <Transaction>2018/12/17 20:34:41.000.030,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\js\serverfunctionexecutor.js</Transaction>
+    <Transaction>2018/12/17 20:34:41.000.217,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\js\callbackframework-min.js</Transaction>
+    <Transaction>2018/12/17 20:34:41.000.717,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\images\expand.png</Transaction>
+    <Transaction>2018/12/17 20:34:41.000.374,=C:\Users\Gabriel\Desktop\MobileREST\SeridorREST\templates\reversestring.html</Transaction>
+  </Transactions>
+</BorlandProject>
