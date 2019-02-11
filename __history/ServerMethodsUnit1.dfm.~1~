@@ -4,13 +4,15 @@ object ServerMethods1: TServerMethods1
   Width = 465
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'Database=C:\Users\Gabriel\Desktop\BancoDeDados.accdb'
+      'Database=C:\Users\Gabriel\Desktop\BancoDeDados1.accdb'
       'ConnectionDef=Access_Demo')
+    Connected = True
     LoginPrompt = False
     Left = 120
     Top = 24
   end
   object FDQuery1: TFDQuery
+    Active = True
     Connection = FDConnection1
     SQL.Strings = (
       'select * from clientes')
@@ -18,7 +20,6 @@ object ServerMethods1: TServerMethods1
     Top = 24
   end
   object FDPhysMSAccessDriverLink1: TFDPhysMSAccessDriverLink
-    ODBCDriver = 'Microsoft Access Driver (*.mdb, *.accdb)'
     Left = 288
     Top = 24
   end
