@@ -6,7 +6,7 @@
         <Projects Include="SERV.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\Cliente\app.dproj">
+        <Projects Include="..\ClientRest\app.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -27,13 +27,13 @@
         <MSBuild Projects="SERV.dproj" Targets="Make"/>
     </Target>
     <Target Name="app">
-        <MSBuild Projects="..\Cliente\app.dproj"/>
+        <MSBuild Projects="..\ClientRest\app.dproj"/>
     </Target>
     <Target Name="app:Clean">
-        <MSBuild Projects="..\Cliente\app.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\ClientRest\app.dproj" Targets="Clean"/>
     </Target>
     <Target Name="app:Make">
-        <MSBuild Projects="..\Cliente\app.dproj" Targets="Make"/>
+        <MSBuild Projects="..\ClientRest\app.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
         <CallTarget Targets="SERV;app"/>

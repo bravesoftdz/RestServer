@@ -5,11 +5,12 @@ object Leandro: TLeandro
   object FDConnection1: TFDConnection
     Params.Strings = (
       
-        'Database=C:\Desenvolvimento\Sistemas Delphi DX\Testes\RestServer' +
-        '\BD\DBPEDIDOS.FDB'
+        'Database=C:\Desenvolvimento\Sistemas Delphi DX\Testes\SERV\BD\DB' +
+        'PEDIDOS.FDB'
       'User_Name=SYSDBA'
       'Password=masterkey'
       'DriverID=IB')
+    Connected = True
     LoginPrompt = False
     Left = 48
     Top = 32
