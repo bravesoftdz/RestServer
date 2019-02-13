@@ -1,40 +1,42 @@
-object ServerMethods1: TServerMethods1
+object Leandro: TLeandro
   OldCreateOrder = False
-  Height = 235
-  Width = 465
+  Height = 357
+  Width = 485
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'Database=C:\Users\Gabriel\Desktop\BancoDeDados.accdb'
-      'ConnectionDef=Access_Demo')
+      
+        'Database=C:\Desenvolvimento\Sistemas Delphi DX\Testes\SERV\BD\DB' +
+        'PEDIDOS.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'DriverID=IB')
+    Connected = True
     LoginPrompt = False
-    Left = 120
-    Top = 24
+    Left = 48
+    Top = 32
   end
-  object FDQuery1: TFDQuery
+  object q: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
       'select * from clientes')
-    Left = 40
-    Top = 24
-  end
-  object FDPhysMSAccessDriverLink1: TFDPhysMSAccessDriverLink
-    ODBCDriver = 'Microsoft Access Driver (*.mdb, *.accdb)'
-    Left = 288
-    Top = 24
-  end
-  object FDMemTable1: TFDMemTable
-    FetchOptions.AssignedValues = [evMode]
-    FetchOptions.Mode = fmAll
-    ResourceOptions.AssignedValues = [rvSilentMode]
-    ResourceOptions.SilentMode = True
-    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
-    UpdateOptions.CheckRequired = False
-    UpdateOptions.AutoCommitUpdates = True
-    Left = 168
-    Top = 128
+    Left = 384
+    Top = 208
   end
   object FDStanStorageBinLink1: TFDStanStorageBinLink
-    Left = 360
+    Left = 200
+    Top = 248
+  end
+  object FDStanStorageJSONLink1: TFDStanStorageJSONLink
+    Left = 256
     Top = 120
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Console'
+    Left = 368
+    Top = 96
+  end
+  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
+    Left = 144
+    Top = 160
   end
 end

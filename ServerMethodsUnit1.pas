@@ -3,71 +3,55 @@ unit ServerMethodsUnit1;
 interface
 
 uses System.SysUtils, System.Classes, System.Json,
-    Datasnap.DSServer, Datasnap.DSAuth, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  DataSnap.DSProviderDataModuleAdapter,
+  DataSnap.DSServer, DataSnap.DSAuth, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
-  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MSAcc,
-  FireDAC.Phys.MSAccDef, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
-  FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Phys.ODBCBase,
-  Data.DB, FireDAC.Comp.DataSet, Data.FireDACJSONReflect,
-  FireDAC.Stan.StorageBin;
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.IB, Data.FireDACJSONReflect,
+  FireDAC.Phys.IBDef, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
+  FireDAC.DApt, FireDAC.ConsoleUI.Wait, FireDAC.Phys.FBDef, FireDAC.Phys.IBBase,
+  FireDAC.Phys.FB, FireDAC.Comp.UI, FireDAC.Stan.StorageJSON,
+  FireDAC.Stan.StorageBin, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
-{$METHODINFO ON}
-  TServerMethods1 = class(TDataModule)
+  TLeandro = class(TDSServerModule)
     FDConnection1: TFDConnection;
-    FDQuery1: TFDQuery;
-    FDPhysMSAccessDriverLink1: TFDPhysMSAccessDriverLink;
-    FDMemTable1: TFDMemTable;
+    q: TFDQuery;
     FDStanStorageBinLink1: TFDStanStorageBinLink;
+    FDStanStorageJSONLink1: TFDStanStorageJSONLink;
+    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    FDPhysFBDriverLink1: TFDPhysFBDriverLink;
   private
     { Private declarations }
   public
     { Public declarations }
     function EchoString(Value: string): string;
     function ReverseString(Value: string): string;
-    function Soma(a,b:integer):string;
-    function ListarClientes(CodigoCliente:string = ''):TFDJSONDataSets;
-
+    Function Listar: TFDJSONDataSets;
   end;
-{$METHODINFO OFF}
 
 implementation
 
-
 {$R *.dfm}
 
+uses System.StrUtils, Data.dbxplatform;
 
-uses System.StrUtils;
-
-function TServerMethods1.EchoString(Value: string): string;
+function TLeandro.EchoString(Value: string): string;
 begin
   Result := Value;
 end;
 
-function TServerMethods1.ListarClientes(CodigoCliente: string): TFDJSONDataSets;
+Function TLeandro.Listar: TFDJSONDataSets;
 begin
-  FDQuery1.Close;
-  FDQuery1.SQL.Clear;
-  if CodigoCliente = '' then
-   FDQuery1.SQL.Add('select * from clientes')
-  else
-  FDQuery1.SQL.Add('select * from clientes where Código = '+CodigoCliente);
+  q.Active := False;
 
-  FDQuery1.Open();
-  Result:= TFDJSONDataSets.Create;
-  TFDJSONDataSetsWriter.ListAdd(Result, FDQuery1);
+  Result := TFDJSONDataSets.Create;
+  TFDJSONDataSetsWriter.ListAdd(Result, q);
 
 end;
 
-function TServerMethods1.ReverseString(Value: string): string;
+function TLeandro.ReverseString(Value: string): string;
 begin
   Result := System.StrUtils.ReverseString(Value);
 end;
 
-function TServerMethods1.Soma(a, b: integer): string;
-begin
-  Result:= inttostr(a+b);
-end;
-
 end.
-

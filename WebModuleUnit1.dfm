@@ -21,30 +21,11 @@ object WebModule1: TWebModule1
   BeforeDispatch = WebModuleBeforeDispatch
   Height = 333
   Width = 414
-  object DSServer1: TDSServer
-    Left = 96
-    Top = 11
-  end
   object DSHTTPWebDispatcher1: TDSHTTPWebDispatcher
-    Server = DSServer1
     Filters = <>
-    AuthenticationManager = DSAuthenticationManager1
     WebDispatch.PathInfo = 'datasnap*'
-    Left = 96
-    Top = 75
-  end
-  object DSAuthenticationManager1: TDSAuthenticationManager
-    OnUserAuthenticate = DSAuthenticationManager1UserAuthenticate
-    OnUserAuthorize = DSAuthenticationManager1UserAuthorize
-    Roles = <>
-    Left = 200
-    Top = 139
-  end
-  object DSServerClass1: TDSServerClass
-    OnGetClass = DSServerClass1GetClass
-    Server = DSServer1
-    Left = 200
-    Top = 11
+    Left = 64
+    Top = 19
   end
   object ServerFunctionInvoker: TPageProducer
     HTMLFile = 'templates/serverfunctioninvoker.html'
@@ -107,7 +88,6 @@ object WebModule1: TWebModule1
     Top = 248
   end
   object DSServerMetaDataProvider1: TDSServerMetaDataProvider
-    Server = DSServer1
     Left = 208
     Top = 248
   end
