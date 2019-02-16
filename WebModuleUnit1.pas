@@ -62,7 +62,7 @@ begin
   else if SameText(TagString, 'host') then
     ReplaceText := string(Request.Host)
   else if SameText(TagString, 'classname') then
-    ReplaceText := ServerMethodsUnit1.TLeandro.ClassName
+    ReplaceText := ServerMethodsUnit1.TMetodos.ClassName
   else if SameText(TagString, 'loginrequired') then
     if DSHTTPWebDispatcher1.AuthenticationManager <> nil then
       ReplaceText := 'true'

@@ -13,20 +13,22 @@ uses System.SysUtils, System.Classes, System.Json,
   FireDAC.Stan.StorageBin, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
-  TLeandro = class(TDSServerModule)
+  TMetodos = class(TDSServerModule)
     FDConnection1: TFDConnection;
     q: TFDQuery;
     FDStanStorageBinLink1: TFDStanStorageBinLink;
     FDStanStorageJSONLink1: TFDStanStorageJSONLink;
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
     FDPhysFBDriverLink1: TFDPhysFBDriverLink;
+    qLogin: TFDQuery;
   private
     { Private declarations }
   public
     { Public declarations }
     function EchoString(Value: string): string;
     function ReverseString(Value: string): string;
-    Function Listar: TFDJSONDataSets;
+    Function ListarClientes: TFDJSONDataSets;
+    function ValidaLogin(Email, Senha:string):Boolean;
   end;
 
 implementation
@@ -35,12 +37,12 @@ implementation
 
 uses System.StrUtils, Data.dbxplatform;
 
-function TLeandro.EchoString(Value: string): string;
+function TMetodos.EchoString(Value: string): string;
 begin
   Result := Value;
 end;
 
-Function TLeandro.Listar: TFDJSONDataSets;
+Function TMetodos.ListarClientes: TFDJSONDataSets;
 begin
   q.Active := False;
 
@@ -49,9 +51,25 @@ begin
 
 end;
 
-function TLeandro.ReverseString(Value: string): string;
+function TMetodos.ReverseString(Value: string): string;
 begin
   Result := System.StrUtils.ReverseString(Value);
+end;
+
+function TMetodos.ValidaLogin(Email, Senha: string): Boolean;
+begin
+ qLogin.Close;
+ qLogin.SQL.Clear;
+ qLogin.SQL.Add('select * from login where email=:email and senha=:senha');
+ qLogin.Params.ParamByName('email').Value:= Email;
+ qLogin.Params.ParamByName('senha').Value:= Senha;
+ qLogin.Prepare;
+ qLogin.Open();
+
+ if not qLogin.IsEmpty then
+  Result:= true
+ else
+ Result:= false;
 end;
 
 end.

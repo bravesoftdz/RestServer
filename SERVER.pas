@@ -45,6 +45,8 @@ begin
   EditPort.Enabled := not FServer.Active;
 end;
 
+
+
 procedure TForm1.ButtonOpenBrowserClick(Sender: TObject);
 var
   LURL: string;
@@ -86,6 +88,8 @@ begin
     FServer.Bindings.Clear;
     FServer.DefaultPort := StrToInt(EditPort.Text);
     FServer.Active := True;
+
+
   end;
 end;
 

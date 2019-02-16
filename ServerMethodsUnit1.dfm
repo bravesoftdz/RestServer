@@ -1,4 +1,4 @@
-object Leandro: TLeandro
+object Metodos: TMetodos
   OldCreateOrder = False
   Height = 357
   Width = 485
@@ -37,5 +37,27 @@ object Leandro: TLeandro
   object FDPhysFBDriverLink1: TFDPhysFBDriverLink
     Left = 144
     Top = 160
+  end
+  object qLogin: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from login'
+      'where email=:email and senha=:senha')
+    Left = 56
+    Top = 88
+    ParamData = <
+      item
+        Name = 'EMAIL'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 100
+        Value = Null
+      end
+      item
+        Name = 'SENHA'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 10
+      end>
   end
 end
